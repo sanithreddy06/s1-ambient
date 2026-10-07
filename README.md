@@ -22,10 +22,11 @@ tested by the owner. Broader compatibility and long-term reliability remain unde
 
 ## 📥 Download
 
-Prebuilt APKs are distributed through
-[GitHub Releases](https://github.com/sanithreddy06/s1-ambient/releases), rather than
-committed to the source repository. No published GitHub Release is currently listed;
-check that page for APK availability or build the app locally using the instructions below.
+Download the latest prebuilt APK from
+[GitHub Releases](https://github.com/sanithreddy06/s1-ambient/releases).
+
+APK files are published as release artifacts and are not committed to the source
+repository. You can also build the app locally using the instructions below.
 
 ## 🚀 Quick Start
 
@@ -72,11 +73,10 @@ or Android SDK platform-tools.
 | Build | APK output path |
 | --- | --- |
 | Debug | `app/build/outputs/apk/debug/app-debug.apk` |
-| Release (unsigned by default) | `app/build/outputs/apk/release/app-release-unsigned.apk` |
+| Release | `app/build/outputs/apk/release/app-release-unsigned.apk` |
 
-To generate the unsigned release APK, run `./gradlew assembleRelease`. Distribution
-requires your own release-signing setup; keep signing keys and credentials out of Git.
-No additional UI, server, or cloud framework is required.
+To build a release APK, run `./gradlew assembleRelease`. Release distribution
+requires a signing key; keep signing keys and credentials out of Git.
 
 ## 🌤️ Weather & Location
 
