@@ -73,7 +73,7 @@ or Android SDK platform-tools.
 | Build | APK output path |
 | --- | --- |
 | Debug | `app/build/outputs/apk/debug/app-debug.apk` |
-| Release | `app/build/outputs/apk/release/app-release-unsigned.apk` |
+| Release | `app/build/outputs/apk/release/app-release.apk` |
 
 To build a release APK, run `./gradlew assembleRelease`. Release distribution
 requires a signing key; keep signing keys and credentials out of Git.
