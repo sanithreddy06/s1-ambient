@@ -21,11 +21,6 @@ physical-device validation; long-term reliability has not been established.
 - Automatic day/night appearance
 - Low-resource native UI for older Android hardware
 
-## 📸 Screenshots
-
-| Main dashboard | Phone remote | Night mode |
-| :---: | :---: | :---: |
-| _Coming soon_ | _Coming soon_ | _Coming soon_ |
 
 ## 📥 Download
 
