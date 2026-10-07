@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">S1 Ambient</string>
+    <string name="tasks_title">TODAY’S TASKS</string>
+    <string name="tasks_empty">No tasks yet</string>
+    <string name="add_task">+ Add task</string>
+    <string name="due_today">Due today · %1$s   Change</string>
+    <string name="due_overdue">Overdue · %1$s</string>
+    <string name="due_past_day">%1$s · %2$s</string>
+    <string name="delete_label">Delete</string>
+    <string name="remote_label">Local Wi-Fi remote</string>
+    <string name="remote_info">%1$s\n%2$s\n\nPairing code: %3$s\n\nSame trusted Wi-Fi only. HTTP is unencrypted.\nReset pairing to revoke all phones.\n\n%4$s</string>
+</resources>

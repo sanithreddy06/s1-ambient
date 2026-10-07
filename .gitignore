@@ -1,0 +1,53 @@
+# Gradle, Kotlin, and generated Android build output
+.gradle/
+.kotlin/
+build/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.apks
+*.aab
+*.dex
+*.class
+*.hprof
+
+# Local SDK/JDK downloads, scratch tools, and generated test artifacts
+.tools/
+/test-artifacts/
+/device-data/
+/shared_prefs/
+*.log
+
+# Machine-local configuration and credentials
+local.properties
+.env
+.env.*
+!.env.example
+!.env.sample
+secrets.properties
+credentials.properties
+signing.properties
+keystore.properties
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.key
+*.pem
+*.ab
+
+# IDE metadata and temporary editor files
+.idea/
+.vscode/
+*.iml
+/captures/
+*.swp
+*.swo
+*.tmp
+*~
+
+# Operating-system metadata
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
