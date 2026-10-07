@@ -68,8 +68,23 @@ class MainActivity : Activity() {
         updateTime()
         hideSystemUi()
         if (state.remoteEnabled || state.ringing.isNotEmpty()) startForegroundService(Intent(this, AmbientService::class.java))
+        val permissions = mutableListOf<String>()
+        val weatherPreferences = getSharedPreferences("weather", MODE_PRIVATE)
+        if (checkSelfPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+            !weatherPreferences.getBoolean("locationPermissionAsked", false)) {
+            weatherPreferences.edit().putBoolean("locationPermissionAsked", true).apply()
+            permissions.add(android.Manifest.permission.ACCESS_COARSE_LOCATION)
+        }
         if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 12)
+            permissions.add(android.Manifest.permission.POST_NOTIFICATIONS)
+        }
+        if (permissions.isNotEmpty()) requestPermissions(permissions.toTypedArray(), 12)
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 12 && permissions.contains(android.Manifest.permission.ACCESS_COARSE_LOCATION)) {
+            weather.permissionChanged()
         }
     }
 
@@ -143,7 +158,7 @@ class MainActivity : Activity() {
         date = label("", 15f, 7f, secondary)
         temperature = label("—", 34f, 20f, primary)
         condition = label("Weather unavailable", 12f, 8f, secondary).apply { letterSpacing = 0.12f }
-        weatherSource = label("MS PALYA · OPEN-METEO", 9f, 7f, muted)
+        weatherSource = label("Current location · OPEN-METEO", 9f, 7f, muted)
         tasks = TaskPanel(this, scale, state)
         root.addView(tasks.view, LinearLayout.LayoutParams(dp(620f), -2).apply {
             topMargin = dp(10f)
